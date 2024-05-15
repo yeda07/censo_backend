@@ -10,7 +10,7 @@ from django.contrib import admin
 from django.urls import include, path
 from personas.api.router import route_persona
 from familias.api.router import route_familia
-
+from actividades.api.router import route_actividad
 
 
 schema_view = get_schema_view(
@@ -33,6 +33,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include(route_persona.urls)),
     path('',include(route_familia.urls)),
+    path('',include(route_actividad.urls)),
 ]
 
 
