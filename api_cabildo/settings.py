@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'personas',
     'familias',
     'actividades',
+    'censos',
 ]
 
 MIDDLEWARE = [
