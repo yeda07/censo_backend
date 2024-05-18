@@ -12,6 +12,7 @@ from personas.api.router import route_persona
 from familias.api.router import route_familia
 from actividades.api.router import route_actividad
 from censos.api.router import route_censo
+from censo_actividades.api.router import route_censo_act
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -35,6 +36,7 @@ urlpatterns = [
     path('',include(route_familia.urls)),
     path('',include(route_actividad.urls)),
     path('',include(route_censo.urls)),
+    path('',include(route_censo_act.urls)),
 ]
 
 
