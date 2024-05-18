@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'familias',
     'actividades',
     'censos',
-    'censo_actividades'
+    'censo_actividades',
+    'multas'
 ]
 
 MIDDLEWARE = [
