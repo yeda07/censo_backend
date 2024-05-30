@@ -45,8 +45,7 @@ INSTALLED_APPS = [
     'actividades',
     'censos',
     'censo_actividades',
-    'multas',
-    'users'
+    'multas'
 ]
 
 MIDDLEWARE = [
@@ -58,8 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-AUTH_USER_MODEL='users.User'
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'api_cabildo.urls'
 
@@ -97,7 +95,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cabildo',
         'USER': 'root',
-        'PASSWORD': 'admin',
+        'PASSWORD': 'yeideran',
         'HOST': 'localhost',  # O la dirección IP de tu servidor MySQL
         'PORT': '3306',       # Puerto de MySQL (por defecto es 3306)
     }
@@ -145,5 +143,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-CORS_ALLOW_ALL_ORIGINS = True
