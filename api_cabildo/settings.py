@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-+0&#*yr3*9awdl9%zovoj+dm76vqi*in89ebcx5@%!q4j)m$0+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','censobackend-production.up.railway.app']
+ALLOWED_HOSTS = ['']
 
 
 # Application definition
