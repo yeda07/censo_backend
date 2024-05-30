@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +26,7 @@ SECRET_KEY = 'django-insecure-+0&#*yr3*9awdl9%zovoj+dm76vqi*in89ebcx5@%!q4j)m$0+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -46,7 +45,8 @@ INSTALLED_APPS = [
     'actividades',
     'censos',
     'censo_actividades',
-    'multas'
+    'multas',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -59,10 +59,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
-
-
-
+AUTH_USER_MODEL='users.User'
 
 ROOT_URLCONF = 'api_cabildo.urls'
 
@@ -105,14 +102,7 @@ DATABASES = {
         'PORT': '5432',       # Puerto de MySQL (por defecto es 3306)
     }
 }
-# Replace the SQLite DATABASES configuration with PostgreSQL:
-'''DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600
-    )
-}'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
