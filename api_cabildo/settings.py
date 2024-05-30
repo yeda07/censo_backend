@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CORS_ALLOW_ALL_ORIGINS = 'http://localhost:3031'
 
 ROOT_URLCONF = 'api_cabildo.urls'
 
@@ -94,7 +95,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cabildo',
         'USER': 'root',
-        'PASSWORD': 'admin',
+        'PASSWORD': 'yeideran',
         'HOST': 'localhost',  # O la dirección IP de tu servidor MySQL
         'PORT': '3306',       # Puerto de MySQL (por defecto es 3306)
     }
