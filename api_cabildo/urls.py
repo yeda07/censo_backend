@@ -15,6 +15,8 @@ from censos.api.router import route_censo
 from censo_actividades.api.router import route_censo_act
 from multas.api.router import route_multa
 from users.api.router import route_user
+from django.conf import settings
+from django.conf.urls.static import static
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -43,6 +45,6 @@ urlpatterns = [
     path('',include(route_user.urls)),
 ]
 
-
++ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
