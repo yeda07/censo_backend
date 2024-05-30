@@ -97,11 +97,12 @@ DATABASES = {
 '''
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'cabildo',
-        'USER': 'root',
-        'PASSWORD': 'yeideran',
-        'HOST': 'localhost',  # O la dirección IP de tu servidor MySQL
-        'PORT': '3306',       # Puerto de MySQL (por defecto es 3306)
+        'USER': 'yeider',
+        'PASSWORD': 'EXMzFRXeiu17DaA2rnoF0S4B5UDtBhyq',
+        'HOST': 'dpg-cpcb92f79t8c73c6pse0-a.oregon-postgres.render.com',  # O la dirección IP de tu servidor MySQL
+        'PORT': '5432',       # Puerto de MySQL (por defecto es 3306)
     }
 }
 # Replace the SQLite DATABASES configuration with PostgreSQL:
