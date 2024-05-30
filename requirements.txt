@@ -53,3 +53,4 @@ uvicorn==0.30.0
 virtualenv==20.26.2
 waitress==3.0.0
 whitenoise==6.6.0
+django-cors-headers==4.3.1

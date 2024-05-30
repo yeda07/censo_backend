@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'drf_yasg',#swagger documentacion
     'rest_framework',
+    'corsheaders',
     'personas',
     'familias',
     'actividades',
@@ -61,6 +62,9 @@ MIDDLEWARE = [
     
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware'
+    
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 AUTH_USER_MODEL='users.User'
