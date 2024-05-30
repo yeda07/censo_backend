@@ -43,8 +43,6 @@ urlpatterns = [
     path('',include(route_censo_act.urls)),
     path('',include(route_multa.urls)),
     path('',include(route_user.urls)),
-]
-
-+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
