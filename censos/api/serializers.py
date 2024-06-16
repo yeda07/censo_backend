@@ -9,7 +9,7 @@ class CensoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Censo
-        fields = ['id','vigencia', 'resguardo_ind', 'comunidad_ind', 'persona']
+        fields = ['id','vigencia', 'resguardo_ind', 'comunidad_ind', 'persona','documento_pdf']
 
     def create(self, validated_data):
         persona_data = validated_data.pop('persona')
