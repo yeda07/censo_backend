@@ -9,4 +9,4 @@ class Multa(models.Model):
     fecha_pago = models.DateField(null=True, blank=True)  # Nuevo campo para capturar la fecha de pago
     
     def __str__(self):
-        return f"{self.censo_actividad} - {'Pagada' if self.pagada else 'Pendiente'}"
+        return f"{self.censo_actividad} - {'Pendiente' if self.pagada else 'Pagada'}"
