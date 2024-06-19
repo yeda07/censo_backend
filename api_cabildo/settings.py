@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'censos',
     'censo_actividades',
     'multas',
-    'users'
+    'users',
+    'rest_framework_simplejwt'
 ]
 
 MIDDLEWARE = [
