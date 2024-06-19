@@ -67,7 +67,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-AUTH_USER_MODEL='users.User'
+
 
 ROOT_URLCONF = 'api_cabildo.urls'
 
@@ -173,3 +173,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AUTH_USER_MODEL='users.User'
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),  # Cambia a 1 hora
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
