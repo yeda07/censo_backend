@@ -113,8 +113,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'cabildo',
         'USER': 'yeider',
-        'PASSWORD': 'EXMzFRXeiu17DaA2rnoF0S4B5UDtBhyq',
-        'HOST': 'dpg-cpcb92f79t8c73c6pse0-a.oregon-postgres.render.com',  # O la dirección IP de tu servidor MySQL
+        'PASSWORD': 'rK6f3YLMs6NCSuPaVqQUPtXd8QSO36Rk',
+        'HOST': 'dpg-cr7779pu0jms73af94d0-a.oregon-postgres.render.com',  # O la dirección IP de tu servidor MySQL
         'PORT': '5432',       # Puerto de MySQL (por defecto es 3306)
     }
 }
