@@ -111,14 +111,13 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cabildo',
-        'USER': 'yeider',
+        'NAME': 'cabildo_mdil',
+        'USER': 'cabildo_mdil_user',
         'PASSWORD': 'rK6f3YLMs6NCSuPaVqQUPtXd8QSO36Rk',
         'HOST': 'dpg-cr7779pu0jms73af94d0-a.oregon-postgres.render.com',  # O la dirección IP de tu servidor MySQL
         'PORT': '5432',       # Puerto de MySQL (por defecto es 3306)
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
