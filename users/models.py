@@ -3,20 +3,20 @@ from django.contrib.auth.models import AbstractUser
 
 
 
-class User(AbstractUser):
-    pass
 
-
-""" 
-Para crear un Usuario por primera vez debe de estar asi:
-
--- -----------------------------------------------------
 class User(AbstractUser):
     email=models.EmailField(unique=True)    
     USERNAME_FIELD="email"
     REQUIRED_FIELDS=[]
     
 
+""" 
+Para crear un Usuario por primera vez debe de estar asi:
+
+-- -----------------------------------------------------
+
+class User(AbstractUser):
+    pass
 
 -- -----------------------------------------------------
 
