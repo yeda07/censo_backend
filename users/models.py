@@ -7,7 +7,17 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     email=models.EmailField(unique=True)    
     USERNAME_FIELD="email"
-    REQUIRED_FIELDS=[]
+    REQUIRED_FIELDS=['username']
+    totp_secret = models.TextField(blank=True, default='')
+    totp_last_counter = models.BigIntegerField(default=-1)
+    recovery_code_hashes = models.JSONField(default=list, blank=True)
+    auth_version = models.PositiveIntegerField(default=0)
+    otp_failed_attempts = models.PositiveIntegerField(default=0)
+    otp_locked_until = models.DateTimeField(null=True, blank=True)
+
+    @property
+    def two_factor_enabled(self):
+        return bool(self.totp_secret)
     
 
 """ 

@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Persona(models.Model):
+    DISCAPACIDAD_CHOICES = [('SI', 'Si'), ('NO', 'No')]
     SECUNDARIA = 'SC'
     PRIMARIA = 'PR'
     UNIVERSITARIA = 'UN'
@@ -51,6 +52,7 @@ class Persona(models.Model):
     RC = 'RC'
     NUIP = 'NUIP'
     TI = 'TI'
+    CE = 'CE'
 
     # Lista de opciones de tipo de documento
     CHOICES_TIPO_DOCUMENTO = [
@@ -58,6 +60,7 @@ class Persona(models.Model):
         (RC, 'Registro Civil'),
         (NUIP, 'Numero único de Identificación Personal'),
         (TI, 'Tarjeta de Identidad'),
+        (CE, 'Cedula de Extranjeria'),
     ]
     
     familida_id = models.ForeignKey('familias.Familia',on_delete=models.SET_NULL,null=True,blank=True)
@@ -72,6 +75,7 @@ class Persona(models.Model):
     estado_civil =models.CharField(max_length=100)
     profesion =models.CharField(max_length=150)
     escolaridad = models.CharField(max_length=2, choices=CHOICES_ESCOLARIDAD, null=True)
+    discapacidad = models.CharField(max_length=2, choices=DISCAPACIDAD_CHOICES, blank=True, default='')
     integrantes = models.IntegerField()
     direccion = models.CharField(max_length=150)
     telefono = models.CharField(max_length=150)

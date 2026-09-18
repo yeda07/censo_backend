@@ -19,7 +19,11 @@ from users.api.router import route_user
 from django.conf import settings
 from django.conf.urls.static import static
 
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from users.api.two_factor_views import (
+    LoginView, VerifyLoginView, TwoFactorSetupView, TwoFactorConfirmView,
+    TwoFactorDisableView, VersionedTokenRefreshView,
+)
+from users.api.views import UserView
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -46,8 +50,13 @@ urlpatterns = [
     path('',include(route_censo_act.urls)),
     path('',include(route_multa.urls)),
     path('',include(route_user.urls)),
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/token/', LoginView.as_view(), name='token_obtain_pair'),
+    path('api/token/verify/', VerifyLoginView.as_view(), name='token_verify_2fa'),
+    path('api/token/refresh/', VersionedTokenRefreshView.as_view(), name='token_refresh'),
+    path('auth/me/', UserView.as_view(), name='auth_me'),
+    path('auth/2fa/setup/', TwoFactorSetupView.as_view(), name='two_factor_setup'),
+    path('auth/2fa/confirm/', TwoFactorConfirmView.as_view(), name='two_factor_confirm'),
+    path('auth/2fa/disable/', TwoFactorDisableView.as_view(), name='two_factor_disable'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

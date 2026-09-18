@@ -7,6 +7,6 @@ from actividades.api.serializers import ActividadSerializer
 
 
 class ActividadViewSet(ModelViewSet):
-    permission_classes=[permissions.AllowAny]
+    permission_classes=[permissions.IsAuthenticated]
     serializer_class=ActividadSerializer
     queryset=Actividad.objects.all()
